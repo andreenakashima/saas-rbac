@@ -13,6 +13,10 @@ import { inviteSubject } from "./subjects/invite";
 import { billingSubject } from "./subjects/billing";
 import { z } from "zod";
 
+export * from "./models/organization";
+export * from "./models/project";
+export * from "./models/user";
+
 const appAbilitiesSchema = z.union([
 	projectSubject,
 	userSubject,
