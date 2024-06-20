@@ -14,10 +14,14 @@
 		"zod": "^3.23.8"
 	},
 	"devDependencies": {
+		"@faker-js/faker": "^8.4.1",
 		"@saas/tsconfig": "*",
 		"@types/bcryptjs": "^2.4.6",
 		"@types/node": "^20.14.5",
 		"prisma": "^5.15.1",
 		"tsx": "^4.15.6"
+	},
+	"prisma": {
+		"seed": "tsx prisma/seed.ts"
 	}
 }
