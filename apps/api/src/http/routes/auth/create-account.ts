@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/prisma";
+import { prisma } from "../../../lib/prisma";
 import { hash } from "bcryptjs";
 import { FastifyInstance } from "fastify";
 import { ZodTypeProvider } from "fastify-type-provider-zod";
@@ -9,6 +9,8 @@ export async function createAccount(app: FastifyInstance) {
 		"/users",
 		{
 			schema: {
+				tags: ["auth"],
+				summary: "Create a new account",
 				body: z.object({
 					name: z.string(),
 					email: z.string().email(),
