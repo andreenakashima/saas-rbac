@@ -42,7 +42,7 @@ model Token {
 }
 
 enum AccountProvider {
-  GIHUB
+  GITHUB
 }
 
 model Account {
