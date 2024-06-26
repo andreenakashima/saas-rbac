@@ -17,6 +17,7 @@ export async function revokeInvite(app: FastifyInstance) {
 				schema: {
 					tags: ["invites"],
 					summary: "Revoke invite",
+					security: [{ bearerAuth: [] }],
 					params: z.object({
 						slug: z.string(),
 						inviteId: z.string().uuid(),
