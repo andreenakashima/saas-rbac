@@ -49,7 +49,7 @@ export function SignUpForm() {
 				</div>
 
 				<div className="space-y-4">
-					<Label htmlFor="email">Name</Label>
+					<Label htmlFor="email">Email</Label>
 					<Input name="email" id="email" type="email" />
 
 					{errors?.email && (
