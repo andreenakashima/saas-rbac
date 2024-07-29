@@ -15,7 +15,7 @@ interface GetProjectsResponse {
 			name: string | null;
 			avatarUrl: string | null;
 		};
-	};
+	}[];
 }
 
 export async function getProjects(org: string) {
