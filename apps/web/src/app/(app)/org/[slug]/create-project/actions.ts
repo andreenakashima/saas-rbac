@@ -1,4 +1,7 @@
-// import { createProject } from "@/http/create-project";
+"use server";
+
+import { getCurrentOrg } from "@/auth/auth";
+import { createProject } from "@/http/create-project";
 import { HTTPError } from "ky";
 import { z } from "zod";
 
@@ -18,10 +21,11 @@ export async function createProjectAction(data: FormData) {
 	const { name, description } = result.data;
 
 	try {
-		// await createProject({
-		// 	name,
-		// 	description,
-		// });
+		await createProject({
+			org: getCurrentOrg()!,
+			name,
+			description,
+		});
 	} catch (err) {
 		if (err instanceof HTTPError) {
 			const { message } = await err.response.json();
