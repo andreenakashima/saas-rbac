@@ -36,8 +36,9 @@ export async function createInvite(app: FastifyInstance) {
 			async (request, reply) => {
 				const { slug } = request.params;
 				const userId = await request.getCurrentUserId();
-				const { organization, membership } =
-					await request.getUserMembership(slug);
+				const { organization, membership } = await request.getUserMembership(
+					slug
+				);
 
 				const { cannot } = getUserPermissions(userId, membership.role);
 
@@ -49,7 +50,7 @@ export async function createInvite(app: FastifyInstance) {
 
 				const { email, role } = request.body;
 
-				const [, domain] = email;
+				const [, domain] = email.split("@");
 
 				if (
 					organization.shouldAttachUsersByDomain &&
